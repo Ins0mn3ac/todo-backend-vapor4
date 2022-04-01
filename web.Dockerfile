@@ -1,7 +1,7 @@
 # ================================
 # Build image
 # ================================
-FROM vapor/swift:5.2 as build
+FROM swiftarm/swift as build
 WORKDIR /build
 
 # Copy entire repo into container
@@ -20,7 +20,7 @@ RUN swift build \
 # ================================
 # Run image
 # ================================
-FROM vapor/ubuntu:18.04
+FROM vapor
 WORKDIR /run
 
 # Copy build artifacts
